@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome against localhost",
+      "url": "http://localhost:4622",
+      "webRoot": "${fileWorkspaceFolder}",
+      "trace": true
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Jest single run all tests",
+      "program": "${workspaceRoot}/node_modules/jest/bin/jest.js",
+      "args": ["--verbose", "-i", "--no-cache"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "runtimeExecutable": "/Users/danielkinsley/.nvm/versions/node/v18.1.0/bin/node"
+    }
+  ]
+}

@@ -1,20 +1,20 @@
-const express = require('express');
-const socket = require('socket.io');
+import express from 'express';
+import { Server } from 'socket.io';
 
-let app = express();
+const app = express();
 
-let server = app.listen(4622, () => {
-  console.log('listen')
+const server = app.listen(4622, () => {
+  console.log('listen');
 });
 
 app.use(express.static('public'));
 
-let upgradedServer = socket(server);
+const upgradedServer = new Server(server);
 
 upgradedServer.on('connection', (socket) => {
   socket.on('sendingMessage', (data) => {
     upgradedServer.emit('broadcastMessage', data);
     console.log(data);
   });
-  console.log('Websocket Connected', socket.id)
-})
+  console.log('Websocket Connected', socket.id);
+});

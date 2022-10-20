@@ -6,6 +6,10 @@
     },
     "extends": "airbnb-base",
     "overrides": [
+        {
+            "files": ["**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)"],
+			"extends": ["plugin:testing-library/jest-dom"],
+        }
     ],
     "parserOptions": {
         "ecmaVersion": "latest"
@@ -18,6 +22,11 @@
         "semi"             : [1, "always"],
         "space-unary-ops"  : 2,
         "object-property-newline": 1,
-        "no-alert": 0
-    }
+        "no-alert": 0,
+        "testing-library/await-async-query": "error",
+		"testing-library/no-await-sync-query": "error",
+		"testing-library/no-debugging-utils": "warn",
+		"testing-library/no-dom-import": "off"
+    },
+    "plugins": ["testing-library"]
 }
