@@ -2,8 +2,9 @@ import express from 'express';
 import { Server } from 'socket.io';
 
 const app = express();
+const PORT = process.env.PORT || 4622
 
-const server = app.listen(4622, () => {
+const server = app.listen(PORT, () => {
   console.log('listen');
 });
 
