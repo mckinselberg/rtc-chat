@@ -31,3 +31,8 @@ stats.json
 # System Files
 .DS_Store
 Thumbs.db
+
+
+key.pem
+server.crt
+password.txt

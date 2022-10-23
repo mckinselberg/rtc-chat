@@ -1,4 +1,4 @@
-const socket = io.connect('http://rtc-chat.onrender.com');
+const socket = io.connect('https://rtc-chat.onrender.com');
 
 const message = document.getElementById('message');
 const button = document.getElementById('send');

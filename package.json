@@ -2,15 +2,16 @@
   "name": "rtc-chat",
   "version": "1.0.0",
   "description": "Simple RTC Chat Application",
-  "main": "index.js",
+  "main": "main.js",
   "type": "module",
   "scripts": {
     "test": "node --trace-warnings --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "start": "node index.js"
+    "start": "node main.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "esm": "^3.2.25",
     "express": "^4.18.1",
     "socket.io": "^4.5.2"
   },
