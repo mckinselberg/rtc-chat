@@ -18,12 +18,12 @@ const server = https.createServer(options, app).listen(PORT, () => {
   console.log(`listen on port ${PORT}`);
 });
 
-const upgradedServer = new Server(server);
+// const upgradedServer = new Server(server);
 
-upgradedServer.on('connection', (socket) => {
-  socket.on('sendingMessage', (data) => {
-    upgradedServer.emit('broadcastMessage', data);
-    console.log(data);
-  });
-  console.log('Websocket Connected', socket.id);
-});
+// upgradedServer.on('connection', (socket) => {
+//   socket.on('sendingMessage', (data) => {
+//     upgradedServer.emit('broadcastMessage', data);
+//     console.log(data);
+//   });
+//   console.log('Websocket Connected', socket.id);
+// });
