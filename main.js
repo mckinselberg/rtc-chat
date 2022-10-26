@@ -4,7 +4,7 @@ import fs from 'fs';
 import https from 'https';
 
 const app = express();
-const PORT = process.env.PORT || 8443
+const PORT = 443;
 
 app.use(express.static('public'));
 
@@ -27,5 +27,3 @@ upgradedServer.on('connection', (socket) => {
   });
   console.log('Websocket Connected', socket.id);
 });
-
-export { PORT }
