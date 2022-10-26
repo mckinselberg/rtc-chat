@@ -2,6 +2,7 @@ import express from 'express';
 import { Server } from 'socket.io';
 import fs from 'fs';
 import https from 'https';
+import http from 'http';
 
 const app = express();
 const PORT = process.env.PORT || 8443;
@@ -14,7 +15,7 @@ const options = {
 }
 
 
-const server = https.createServer(options, app).listen(PORT, () => {
+const server = http.createServer(options, app).listen(PORT, () => {
   console.log(`listen on port ${PORT}`);
 });
 
