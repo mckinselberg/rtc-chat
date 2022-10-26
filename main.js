@@ -4,6 +4,7 @@ import fs from 'fs';
 import https from 'https';
 
 const app = express();
+const PORT = process.env.PORT || 8443;
 
 app.use(express.static('public'));
 
@@ -13,8 +14,8 @@ const options = {
 }
 
 
-const server = https.createServer(options, app).listen(80, () => {
-  console.log('listen');
+const server = https.createServer(options, app).listen(PORT, () => {
+  console.log(`listen on port ${PORT}`);
 });
 
 const upgradedServer = new Server(server);
