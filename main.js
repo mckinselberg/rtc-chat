@@ -4,7 +4,6 @@ import fs from 'fs';
 import https from 'https';
 
 const app = express();
-const PORT = 443;
 
 app.use(express.static('public'));
 
@@ -14,7 +13,7 @@ const options = {
 }
 
 
-const server = https.createServer(options, app).listen(PORT, () => {
+const server = https.createServer(options, app).listen(8080, () => {
   console.log('listen');
 });
 
