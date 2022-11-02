@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "node --trace-warnings --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "start": "node main.js"
+    "start": "sudo node main.js",
+    "winstart": "node main.js"
   },
   "author": "",
   "license": "ISC",
