@@ -9,7 +9,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
-const PORT = process.env.KUBERNETES_SERVICE_PORT || process.env.PORT;
+const PORT = process.env.PORT;
 
 app.use(express.static('public'));
 
@@ -33,4 +33,4 @@ upgradedServer.on('connection', (socket) => {
   console.log('Websocket Connected', socket.id);
 });
 
-console.log(process.env);
+// console.log(process.env);
