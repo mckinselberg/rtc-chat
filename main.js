@@ -3,6 +3,10 @@ import { Server } from 'socket.io';
 import fs from 'fs';
 import https from 'https';
 import http from 'http';
+// import process from 'process';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 8443;
@@ -19,12 +23,14 @@ const server = http.createServer(options, app).listen(PORT, () => {
   console.log(`listen on port ${PORT}`);
 });
 
-// const upgradedServer = new Server(server);
+const upgradedServer = new Server(server);
 
-// upgradedServer.on('connection', (socket) => {
-//   socket.on('sendingMessage', (data) => {
-//     upgradedServer.emit('broadcastMessage', data);
-//     console.log(data);
-//   });
-//   console.log('Websocket Connected', socket.id);
-// });
+upgradedServer.on('connection', (socket) => {
+  socket.on('sendingMessage', (data) => {
+    upgradedServer.emit('broadcastMessage', data);
+    console.log(data);
+  });
+  console.log('Websocket Connected', socket.id);
+});
+
+console.log(process.env);
