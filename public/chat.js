@@ -1,4 +1,4 @@
-const socket = io.connect('https://localhost:8443');  // io.connect('https://rtc-chat.onrender.com');
+const socket = io.connect('https://rtc-chat.onrender.com'); // io.connect('https://localhost:8443'); 
 
 const message = document.getElementById('message');
 const button = document.getElementById('send');

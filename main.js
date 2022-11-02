@@ -9,7 +9,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 8443;
+const PORT = process.env.KUBERNETES_SERVICE_PORT || process.env.PORT;
 
 app.use(express.static('public'));
 
